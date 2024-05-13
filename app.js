@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.use(morgan('dev'));
 
-const whitelist = ['https://fevoff-admin.netlify.app', 'https://fevoff.netlify.app', 'http://localhost:3000', 'http://localhost:3002', 'https://fevoff.vercel.app', 'https://fevoff-admin.vercel.app'];
+const whitelist = [ 'http://localhost:3000', 'http://localhost:3002'];
 
 const corsOptions = {
     origin: function (origin, callback) {
