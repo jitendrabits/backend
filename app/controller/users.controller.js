@@ -40,8 +40,7 @@ exports.getUsersList = async (req, res, next) => {
         let dataCount2 = await Products.countDocuments(where);
         let dataCount3 = await Order.countDocuments(where);
 
-        console.log("datacount2 usercontroller",dataCount3);
-
+ 
         if (userList.length > 0) {
 
             res.status(statusCode.SUCCESS_CODE).send({
