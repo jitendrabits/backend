@@ -10,7 +10,7 @@ const cartItemSchema = new mongoose.Schema({
     productSmallDescription: String,
     productDescription: String,
     rating: Number,
-    sizeVariation: Boolean,
+    sizeVariation: Number,
     productMrp: Number,
     productPrice: Number,
     availableQty: Number,
@@ -25,8 +25,7 @@ const cartItemSchema = new mongoose.Schema({
     status: Number,
     size: {
         type: String,
-        required: true
-    },
+     },
     quantity: {
         type: Number,
         required: true,

@@ -18,7 +18,7 @@ exports.getProductsList = async (req, res, next) => {
 
     try {
 
-        const userList = await Products.find(where, { _id: 1, name: 1, productSlug: 1, brand: 1, category: 1, rating: 1, productMrp: 1, productPrice: 1, productMainImage: 1 });
+        const userList = await Products.find(where, { _id: 1, name: 1, productSlug: 1, brand: 1, category: 1, rating: 1, productMrp: 1, productPrice: 1,seller:1,sizeVariation:1, availableQty:1,productMainImage: 1 });
 
         if (userList.length > 0) {
 
@@ -155,6 +155,7 @@ exports.createProducts = async (req, res, next) => {
                     showHide: data.showHide,
                     rating: data.rating,
                     sizeVariation: data.sizeVariation,
+                    seller:data.seller,
                     productMrp: data.productMrp,
                     productPrice: data.productPrice,
                     availableQty: data.availableQty,
@@ -240,6 +241,8 @@ exports.updateProducts = async (req, res, next) => {
                     productSlug: data.productSlug,
                     brand: data.brand,
                     category: data.category,
+                    seller: data.seller,
+                    sizeVariation: data.sizeVariation,
                     productSmallDescription: data.productSmallDescription,
                     productDescription: data.productDescription,
                     showHide: data.showHide,
@@ -252,7 +255,9 @@ exports.updateProducts = async (req, res, next) => {
                 if (data.sizeVariation != "" && data.sizeVariation != null) {
                     productDetails = { ...productDetails, sizeVariation: data.sizeVariation };
                 }
-
+                if (data.seller != "" && data.seller != null) {
+                    productDetails = { ...productDetails, seller: data.seller };
+                }
                 if (data.productMrp != "" && data.productMrp != null) {
                     productDetails = { ...productDetails, productMrp: data.productMrp };
                 }
