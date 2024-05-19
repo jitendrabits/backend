@@ -34,8 +34,8 @@ const products = mongoose.Schema({
         default: 4,
     },
     sizeVariation: {
-        type: Boolean,
-        default: false,
+        type: Number,
+        default: 0,
     },
     productMrp: {
         type: Number,

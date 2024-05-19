@@ -11,6 +11,9 @@ const decodeBase64Image = require('../middelware/base64toimage');
 const moment = require('moment');
 
 const imagePath = "uploads/users/";
+const Products = model.products;
+const Order = model.order;
+
 
 exports.getUsersList = async (req, res, next) => {
 
@@ -34,7 +37,10 @@ exports.getUsersList = async (req, res, next) => {
         let userList = await qry;
 
         let dataCount = await Users.countDocuments(where);
+        let dataCount2 = await Products.countDocuments(where);
+        let dataCount3 = await Order.countDocuments(where);
 
+ 
         if (userList.length > 0) {
 
             res.status(statusCode.SUCCESS_CODE).send({
@@ -42,6 +48,8 @@ exports.getUsersList = async (req, res, next) => {
                 status: true,
                 data: userList,
                 totalUsers: dataCount,
+                totalProduct:dataCount2,
+                totalOrder:dataCount3
             });
 
         } else {
