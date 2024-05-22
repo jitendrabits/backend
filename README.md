@@ -1,3 +1,2 @@
 ﻿# backend-fevoff
- #install
-use npm i -f
+ use npm i -f
