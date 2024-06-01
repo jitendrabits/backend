@@ -26,6 +26,7 @@ app.use(morgan('dev'));
 
 const whitelist = ['https://frontend-gray-mu-93.vercel.app','http://34.233.94.79:3000', 'http://localhost:3000', 'http://localhost:3002','https://admin-hr46.vercel.app/'];
 
+
 const corsOptions = {
     origin: function (origin, callback) {
         if (whitelist.indexOf(origin) !== -1 || !origin) {
